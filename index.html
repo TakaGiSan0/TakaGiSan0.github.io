@@ -235,67 +235,45 @@
 
     </section>
 
-
     <section class="py-10 md:py-16" id="experience">
-
         <div class="container max-w-screen-xl mx-auto px-4">
-
-            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-20">Experience</h1>
-
-            <p class="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-6 md:mb-20 text-center md:text-left">Experience
+            </h1>
+            <p class="font-normal text-gray-500 text-xs md:text-base mb-12 md:mb-20 text-center md:text-left">
+                Below is a summary of the places I studied
             </p>
-
-            <div class="flex flex-col lg:flex-row justify-between">
-                <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
+            <div class="flex flex-col lg:flex-row lg:justify-between">
+                <div class="space-y-4 md:space-y-16 mb-12 md:mb-0 text-center md:text-left">
                     <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
-
                     <p class="font-semibold text-gray-600 text-base">Massa Fames <span
                             class="font-normal text-gray-300">/ New York</span></p>
-
                     <p class="font-semibold text-gray-600 text-base">Massa Fames <span
                             class="font-normal text-gray-300">/ New York</span></p>
-
                     <p class="font-semibold text-gray-600 text-base">Massa Fames <span
                             class="font-normal text-gray-300">/ New York</span></p>
-
                     <p class="font-semibold text-gray-600 text-base">Massa Fames <span
                             class="font-normal text-gray-300">/ New York</span></p>
-
                     <p class="font-semibold text-gray-600 text-base">Massa Fames <span
                             class="font-normal text-gray-300">/ New York</span></p>
                 </div>
-
-                <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
+                <div class="space-y-4 md:space-y-16 mb-12 md:mb-0 text-center md:text-left">
                     <h6 class="font-medium text-gray-400 text-base uppercase">Position</h6>
-
                     <p class="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
-
                     <p class="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
-
                     <p class="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
-
                     <p class="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
-
                     <p class="font-normal text-gray-400 text-base">Junior Front-End Developer</p>
                 </div>
-
-                <div class="space-y-8 md:space-y-16">
+                <div class="space-y-4 md:space-y-16 text-center md:text-left">
                     <h6 class="font-medium text-gray-400 text-base uppercase">Year</h6>
-
                     <p class="font-normal text-gray-400 text-base">2016</p>
-
                     <p class="font-normal text-gray-400 text-base">2016</p>
-
                     <p class="font-normal text-gray-400 text-base">2016</p>
-
                     <p class="font-normal text-gray-400 text-base">2016</p>
-
                     <p class="font-normal text-gray-400 text-base">2016</p>
                 </div>
             </div>
-
         </div>
-
     </section>
 
 
@@ -326,23 +304,16 @@
     <script>
         feather.replace()
 
-        document.getElementById('menu-btn').addEventListener('click', function () {
-            var menu = document.getElementById('menu');
-            menu.classList.toggle('hidden');
-            menu.classList.toggle('flex');
-
-            if (menu.classList.contains('flex')) {
-                menu.classList.add('absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-white', 'flex-col', 'items-center', 'justify-center', 'z-50');
-            } else {
-                menu.classList.remove('absolute', 'top-0', 'left-0', 'w-full', 'h-full', 'bg-white', 'flex-col', 'items-center', 'justify-center', 'z-50');
-            }
-        });
-
         function scrollToSection(buttonId, sectionId) {
             document.getElementById(buttonId).addEventListener('click', function () {
                 document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
             });
         }
+
+        document.getElementById('home-btn').addEventListener('click', function () {
+            // Scroll to Home section
+            document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+        });
 
         scrollToSection('skills-btn', 'skills');
         scrollToSection('skill-btn', 'skills');
