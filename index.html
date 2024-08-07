@@ -18,12 +18,11 @@
 
 <body class="bg-gray-100">
 
-    <section class="py-10 md:py-5">
+    <section class="py-10 md:py-5" id="home">
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
             <div class="relative">
-                <!-- Button Hamburger -->
                 <button id="menu-btn" class="block md:hidden px-4 py-2 text-gray-700 focus:outline-none">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -32,24 +31,21 @@
                     </svg>
                 </button>
 
-                <!-- Navbar -->
-                <nav id="menu"
-                    class="transform scale-y-0 origin-top transition-transform duration-300 ease-in-out md:flex flex-col md:flex-row items-center justify-end md:space-x-6">
-                    <button
+                <nav id="menu" class="hidden md:flex flex-col md:flex-row items-center justify-end md:space-x-6">
+                    <button id="skills-btn"
                         class="px-4 py-2 md:px-7 md:py-3 text-gray-700 text-sm md:text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
                         Skills</button>
-                    <button
+                    <button id="project-btn"
                         class="px-4 py-2 md:px-7 md:py-3 text-gray-700 text-sm md:text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
                         Projects</button>
-                    <button
+                    <button id="education-btn"
                         class="px-4 py-2 md:px-7 md:py-3 text-gray-700 text-sm md:text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
                         Education</button>
-                    <button
+                    <button id="experiene-btn"
                         class="px-4 py-2 md:px-7 md:py-3 text-gray-700 text-sm md:text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">
                         Experience</button>
                 </nav>
             </div>
-
 
 
             <div class="text-center">
@@ -83,11 +79,12 @@
 
     </section>
 
-    <div class="text-center ">
-        <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Skills</h1>
-    </div>
 
-    <section class="py-10 md:py-16">
+    <section id="skills" class="py-10 md:py-16">
+
+        <div class="text-center ">
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-20">Skills</h1>
+        </div>
 
         <v class="container w-20 mx-auto px-4 items-center justify-between"></v>
 
@@ -145,12 +142,12 @@
 
     </section>
 
-    <div class="text-center ">
-        <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Project</h1>
 
-    </div>
+    <section class="py-10 md:py-16" id="project">
 
-    <section class="py-10 md:py-16">
+        <div class="text-center ">
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-20">Project</h1>
+        </div>
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
@@ -213,11 +210,11 @@
 
     </section>
 
-    <section class="py-10 md:py-16">
+    <section class="py-10 md:py-16" id="education">
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
-            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Education</h1>
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-20">Education</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
                 <div class="bg-gray-50 px-8 py-10 rounded-md ">
@@ -246,11 +243,11 @@
     </section>
 
 
-    <section class="py-10 md:py-16">
+    <section class="py-10 md:py-16" id="experience">
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
-            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Experience</h1>
+            <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-20">Experience</h1>
 
             <p class="font-normal text-gray-500 text-xs md:text-base mb-20">Below is a summary of the places I studied
             </p>
@@ -312,11 +309,13 @@
     <footer class="flex flex-col space-y-10 justify-center m-10">
 
         <nav class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
-            <a class="hover:text-gray-900" href="#">Home</a>
-            <a class="hover:text-gray-900" href="#">Skills</a>
-            <a class="hover:text-gray-900" href="#">Project</a>
-            <a class="hover:text-gray-900" href="#">Education</a>
-            <a class="hover:text-gray-900" href="#">Experience</a>
+            <button class="hover:text-gray-900 transition ease-linear duration-500" id="home-btn">Home</button>
+            <button class="hover:text-gray-900 transition ease-linear duration-500" id="skill-btn">Skills</button>
+            <button class="hover:text-gray-900 transition ease-linear duration-500" id="projects-btn">Project</button>
+            <button class="hover:text-gray-900 transition ease-linear duration-500"
+                id="educations-btn">Education</button>
+            <button class="hover:text-gray-900 transition ease-linear duration-500"
+                id="experienes-btn">Experience</button>
         </nav>
 
         <div class="flex justify-center space-x-5">
@@ -333,7 +332,36 @@
 
     <script>
         feather.replace()
+
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        function scrollToSection(buttonId, sectionId) {
+            document.getElementById(buttonId).addEventListener('click', function () {
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        scrollToSection('skills-btn', 'skills');
+        scrollToSection('skill-btn', 'skills');
+        scrollToSection('projects-btn', 'project');
+        scrollToSection('project-btn', 'project');
+        scrollToSection('education-btn', 'education');
+        scrollToSection('educations-btn', 'education');
+        scrollToSection('experiene-btn', 'experience');
+        scrollToSection('experienes-btn', 'experience');
+        scrollToSection('home-btn', 'home');
+
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        };
+
     </script>
+
+
 
 </body>
 
