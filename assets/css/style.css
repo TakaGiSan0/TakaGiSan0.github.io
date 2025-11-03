@@ -30,6 +30,29 @@
 
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
+.card-reveal {
+  /* 1. Gunakan Flexbox untuk membagi panel */
+  display: flex;
+  flex-direction: column;
+  /* 2. Pastikan tinggi panel 100% */
+  height: 100%;
+}
+
+/* 3. Kita buat wrapper baru untuk konten yang bisa di-scroll */
+.reveal-content-wrapper {
+  /* 4. Biarkan wrapper ini membesar mengisi ruang kosong */
+  flex: 1;
+  /* 5. JIKA konten terlalu panjang, HANYA wrapper ini yang akan scroll */
+  overflow-y: auto;
+}
+
+.card-reveal .card-action {
+  /* 6. Paksa tombol agar tidak membesar/menyusut */
+  flex-shrink: 0;
+  /* 7. Beri sedikit jarak dari konten scroll di atasnya */
+  margin-top: 16px;
+}
+
 .social {
   margin: 0 auto;
   width: auto;
